@@ -671,8 +671,8 @@ class GeneratEmbedFeatures:
 
 def argumentParser():
     parser = argparse.ArgumentParser(description = 'Deep feature space embeding plot')
-    parser.add_argument('--data_root', help='data folder, can be either with single task or multi task', type=str, required=False, default='/home/getch/meta/SemiCD/deep_feat_camp')
-    parser.add_argument('--save_dir', help = 'main root to save the test result', type = str, required=False, default='/home/getch/meta/SemiCD/deep_feat_plots_camp')
+    parser.add_argument('--data_root', help='data folder, can be either with single task or multi task', type=str, required=False, default='/deep_feat_camp')
+    parser.add_argument('--save_dir', help = 'main root to save the test result', type = str, required=False, default='/deep_feat_plots_camp')
     
     arg = parser.parse_args()
     return arg
