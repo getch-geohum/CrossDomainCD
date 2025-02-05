@@ -51,8 +51,7 @@ def main(config, resume, domain_loss=False):
                                            weakly_loss_w=config['weakly_loss_w'],
                                            use_weak_lables=config['use_weak_lables'],
                                            domain_loss=domain_loss)
-    #weight = torch.load('/home/getch/ssl/CHANGE-EXPERIMENT/LEVIR-CD_reproduce/SemiCD_sup_100/best_model.pth')
-    #model.load_state_dict(weight['state_dict'], strict=False)
+   
     print(f'\n{model}\n')
 
     # TRAINING
