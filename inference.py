@@ -165,14 +165,14 @@ def main(data_fold, exp_ext, weight=None):
 
 def parse_arguments(fold, exp_ext):
     parser = argparse.ArgumentParser(description='PyTorch Training')
-    parser.add_argument('--config', default='/home/getch/meta/SemiCD/configs/config-sup_open_camp.json',type=str,
+    parser.add_argument('--config', default='/configs/config-sup_open_camp.json',type=str,
                         help='Path to the config file')
-    parser.add_argument( '--model', default=f'/home/getch/ssl/CHANGE-EXPERIMENT/LEVIR-CD_reproduce/SemiCD_WUHAN_sup_100_{fold}_100_unsup_{exp_ext}/best_model.pth', type=str,
+    parser.add_argument( '--model', default=f'/SemiCD_WUHAN_sup_100_{fold}_100_unsup_{exp_ext}/best_model.pth', type=str,
                         help='Path to the trained .pth model')
     parser.add_argument( '--save', action='store_true', help='Save images')
-    parser.add_argument('--Dataset_Path', default=f"/home/getch/ssl/LEVIR_WIHAN_256/{fold}", type=str,
+    parser.add_argument('--Dataset_Path', default=f"/LEVIR_WIHAN_256/{fold}", type=str,
                         help='Path to dataset LEVIR-CD')
-    parser.add_argument('--outpath', default=f"/home/getch/ssl/SemiCD/outputs_SUP_OPEN_CAMP_100_{exp_ext}", type=str,
+    parser.add_argument('--outpath', default=f"/outputs_SUP_OPEN_CAMP_100_{exp_ext}", type=str,
                         help='Path to dataset test dataset')
 
     args = parser.parse_args()
@@ -183,9 +183,9 @@ if __name__ == '__main__':
         print("Processing data fold: ", data_fold)
         unsupervised = True
         if unsupervised:
-            dicts = {"LEVIR":"/home/getch/ssl/CHANGE-EXPERIMENT/LEVIR-CD_reproduce/SemiCD_sup_100/best_model.pth",
-                     "WUHAN":"/home/getch/ssl/CHANGE-EXPERIMENT/LEVIR-CD_reproduce/WUHAN_sup_100/best_model.pth",
-                     "EGY":"/home/getch/ssl/CHANGE-EXPERIMENT/LEVIR-CD_reproduce/EGY_BCD_sup_100/best_model.pth"}
+            dicts = {"LEVIR":"/SemiCD_sup_100/best_model.pth",
+                     "WUHAN":"/WUHAN_sup_100/best_model.pth",
+                     "EGY":"/EGY_BCD_sup_100/best_model.pth"}
             for key in dicts.keys():
                 print("GOT weight: ", key)
                 main(data_fold=data_fold, exp_ext=key, weight=dicts[key])
@@ -193,5 +193,3 @@ if __name__ == '__main__':
             for expext in ["nOT", "OT"]:
                 main(data_fold=data_fold, exp_ext=expext, weight=None)
 
-# /home/getch/ssl/LEVIR_WIHAN_256/LEVIR-CD256
-# /home/getch/ssl/LEVIR_WIHAN_256/WHU-CD-256
