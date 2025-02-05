@@ -1,0 +1,4 @@
+dominate
+tensorboard
+imageio>=2.5.0
+git+https://github.com/lucasb-eyer/pydensecrf.git
