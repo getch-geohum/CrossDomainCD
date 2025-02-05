@@ -98,8 +98,8 @@ def generateFeatures(data_root, out_root, mu_std=True, weight='v1', per_chip=Tru
                     np.save(f'{out_dir}/{i}.npy', outs.detach().numpy())
 def argumentParser():
     parser = argparse.ArgumentParser(description = 'Deep feature space embeding plot')
-    parser.add_argument('--data_root', help='folder containes all subfolders for the dataset', type=str, required=False, default='/home/getch/ssl/LEVIR_WIHAN_256')
-    parser.add_argument('--save_dir', help = 'root to save deep features', type = str, required=False, default='/home/getch/meta/SemiCD/deep_feat_noabs') 
+    parser.add_argument('--data_root', help='folder containes all subfolders for the dataset', type=str, required=False, default='/LEVIR_WIHAN_256')
+    parser.add_argument('--save_dir', help = 'root to save deep features', type = str, required=False, default='/deep_feat_noabs') 
     arg = parser.parse_args()
     return arg
     return arg
