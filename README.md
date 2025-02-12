@@ -9,7 +9,9 @@ inference
 ```python inference.py --config /path2configfile ```
 
 feature space plot
+
 ```python generate_features.py --save_root /root2save --data_root /root2data```
+
 ```python feature_space_plot.py --save_root /root2save --data_root /root2data```
 
 # citation 
