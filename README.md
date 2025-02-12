@@ -6,6 +6,7 @@ train
 ``` python train.py --config /path2configfile ```
 
 inference
+
 ```python inference.py --config /path2configfile ```
 
 feature space plot
